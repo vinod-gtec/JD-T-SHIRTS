@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium T-Shirts | Custom Apparel Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <h1>Premium Threads</h1>
+            <p class="tagline">Crafted with Excellence</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#products">Collection</a></li>
+                <li><a href="#custom">Custom</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <div class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="animate-on-load">Premium Quality T-Shirts</h2>
+            <p class="animate-on-load">Discover our exclusive collection of premium cotton t-shirts, designed for comfort and style.</p>
+            <a href="#products" class="btn animate-on-load">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2 class="section-title">Our Collection</h2>
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="tshirt">T-Shirts</button>
+            <button class="filter-btn" data-filter="polo">Polo Shirts</button>
+            <button class="filter-btn" data-filter="hoodie">Hoodies</button>
+        </div>
+        <div class="products-container" id="products-container">
+            <!-- Products will be loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- Custom T-Shirt Section -->
+    <section id="custom" class="custom-section">
+        <h2 class="section-title">Design Your Own T-Shirt</h2>
+        <div class="custom-container">
+            <div class="custom-preview">
+                <div class="tshirt-preview">
+                    <img src="images/products/ctst.jpg" alt="T-Shirt Template" id="tshirt-base">
+                    <div class="custom-text" id="custom-text-preview">Your Text Here</div>
+                </div>
+            </div>
+            <div class="custom-options">
+                <h3>Customize Your T-Shirt</h3>
+                <div class="option-group">
+                    <label for="custom-text">Custom Text:</label>
+                    <input type="text" id="custom-text" placeholder="Enter your text">
+                </div>
+                <div class="option-group">
+                    <label for="text-color">Text Color:</label>
+                    <input type="color" id="text-color" value="#000000">
+                </div>
+                <div class="option-group">
+                    <label for="text-size">Text Size:</label>
+                    <select id="text-size">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label>T-Shirt Color:</label>
+                    <div class="color-options">
+                        <div class="color-option active" data-color="white" style="background-color: white;"></div>
+                        <div class="color-option" data-color="black" style="background-color: black;"></div>
+                        <div class="color-option" data-color="navy" style="background-color: navy;"></div>
+                        <div class="color-option" data-color="red" style="background-color: red;"></div>
+                        <div class="color-option" data-color="green" style="background-color: green;"></div>
+                    </div>
+                </div>
+                <div class="price-info">
+                    <p><strong>Price: <span id="custom-total-price">$25.00</span></strong></p>
+                </div>
+                <button class="btn" id="add-custom-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2 class="section-title">About Premium Threads</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=800" alt="About Us">
+            </div>
+            <div class="about-text">
+                <p>At Premium Threads, we believe that quality clothing should be accessible to everyone. Our journey began with a simple mission: to create comfortable, stylish, and durable t-shirts that stand the test of time.</p>
+                <p>Each piece in our collection is carefully crafted using premium cotton and sustainable manufacturing processes. We work directly with skilled artisans to ensure every t-shirt meets our high standards of quality and comfort.</p>
+                <p>Whether you're looking for a classic everyday tee or a custom design that reflects your personality, Premium Threads has something special for you. Join thousands of satisfied customers who have made us their go-to choice for premium apparel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Fashion Street, Style City, SC 12345</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@premiumthreads.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Premium Threads</h2>
+                <p>Quality apparel for the modern lifestyle.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#custom">Custom</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get updates on new products and offers.</p>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Premium Threads. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-total">
+                <strong>Total: <span id="cart-total">$0.00</span></strong>
+            </div>
+            <div class="cart-actions">
+                <button id="checkout-btn" class="btn">Checkout</button>
+                <button id="clear-cart-btn" class="btn btn-secondary">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Full Name *</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-whatsapp">WhatsApp Number *</label>
+                    <input type="tel" id="customer-whatsapp" placeholder="+91XXXXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Delivery Address *</label>
+                    <textarea id="customer-address" rows="3" required></textarea>
+                </div>
+                
+                <h3>Order Details</h3>
+                <div id="checkout-items">
+                    <!-- Checkout items will be populated here -->
+                </div>
+                
+                <div class="checkout-total">
+                    <strong>Total: <span id="checkout-total">$0.00</span></strong>
+                </div>
+                
+                <button type="submit" class="btn">Place Order via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
